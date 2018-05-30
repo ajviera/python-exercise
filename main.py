@@ -1,3 +1,4 @@
+import sys
 from models.user import *
 
 user = User("ariel")
