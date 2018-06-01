@@ -1,5 +1,6 @@
 # Python Exercise
 
+[![Build Status](https://travis-ci.org/ajviera/python-exercise.svg?branch=master)](https://travis-ci.org/ajviera/python-exercise)
 [![Coverage Status](https://coveralls.io/repos/github/ajviera/python-exercise/badge.svg?branch=master)](https://coveralls.io/github/ajviera/python-exercise?branch=master)
 
 ## Requirements
