@@ -3,6 +3,7 @@ import unittest
 
 class UserTest(unittest.TestCase):
     def test_creation(self):
-        user = User('ariel')
-        self.assertEqual(user.name, 'ariel')
+        name = 'Ariel'
+        user = User(name)
+        self.assertEqual(user.name, name)
 

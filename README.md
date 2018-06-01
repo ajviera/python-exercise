@@ -51,18 +51,17 @@ pip freeze > requirements.pip
 with Docker
 
 ```sh
-docker-compose run --rm intive-fdv_app coverage run --source=src/models -m unittest tests/*.py
-docker-compose run --rm intive-fdv_app coverage report
+docker-compose run --rm intive-fdv_app coverage run --source=src/models -m unittest tests/models/*.py && docker-compose run --rm intive-fdv_app coverage report
 ```
 
 without Docker
 
 ```sh
-coverage run -m unittest tests/user_test.py && coverage report
+coverage run --source=src/models -m unittest tests/models/*.py && coverage report
 ```
 
 ## Run Test without Coverage
 
 ```sh
-python -m unittest tests/*.py
+python -m unittest tests/models/*.py
 ```
