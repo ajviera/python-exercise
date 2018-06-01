@@ -1,6 +1,6 @@
 # Python Exercise
 
-[![Coverage Status](https://coveralls.io/repos/github/ajviera/python-exercise/badge.svg)](https://coveralls.io/github/ajviera/python-exercise)
+[![Coverage Status](https://coveralls.io/repos/github/ajviera/python-exercise/badge.svg?branch=master)](https://coveralls.io/github/ajviera/python-exercise?branch=master)
 
 ## Requirements
 
