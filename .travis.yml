@@ -4,6 +4,6 @@ python:
 install:
   - pip install -r requirements.pip
 script:
-  - coverage run -m unittest tests/*.py && coverage report
+  - coverage run --source=src/models -m unittest tests/*.py && coverage report
 after_success:
   - coveralls

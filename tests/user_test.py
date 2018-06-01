@@ -1,4 +1,4 @@
-from models.user import *
+from src.models.user import *
 import unittest
 
 class UserTest(unittest.TestCase):
