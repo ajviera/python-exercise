@@ -9,6 +9,17 @@
 
 ## Set up project
 
+`Docker`
+
+The project is Docker-ready. To start developing we just need to have Docker installed.
+
+``` sh
+docker-compose build
+docker-compose up
+```
+
+And that's it :-)
+
 `Linux`
 
 ```sh
@@ -36,6 +47,15 @@ pip freeze > requirements.pip
 ```
 
 ## Run Test with Coverage
+
+with Docker
+
+```sh
+docker-compose run --rm intive-fdv_app coverage run --source=src/models -m unittest tests/*.py
+docker-compose run --rm intive-fdv_app coverage report
+```
+
+without Docker
 
 ```sh
 coverage run -m unittest tests/user_test.py && coverage report
