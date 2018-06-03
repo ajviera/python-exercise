@@ -1,7 +1,6 @@
 from datetime import date
 class Rent:
     def __init__(self, rent_type, users, bike, start_time, end_time):
-        print(str(self._validates_users(users)))
         self.rent_type = rent_type
         self.users = users
         self.bike = bike
@@ -16,5 +15,4 @@ class Rent:
         return diff.days * 24 + diff.seconds // 3600
 
     def _validates_users(self, users):
-        if not(type(users) != list):
-            raise ValueError('Users must be only one')
+        raise NotImplementedError('Subclass must implement abstract method')
