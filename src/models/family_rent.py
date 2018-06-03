@@ -1,11 +1,11 @@
 from .rent import *
 class FamilyRent(Rent):
-    def __init__(self, rent_type, users, bike, start_time, end_time):
+    def __init__(self, rent_type, users, bike, start_time):
         self._validates_users(users)
-        super().__init__(rent_type, users, bike, start_time, end_time)
+        super().__init__(rent_type, users, bike, start_time)
 
-    def cost(self):
-        return round((super().cost() * len(self.users) * 0.70), 2)
+    def _cost(self):
+        return round((super()._cost() * len(self.users) * 0.70), 2)
 
     def _validates_users(self, users):
         if not(len(users) >= 3 and len(users) <= 5):

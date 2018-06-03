@@ -1,9 +1,9 @@
 from .rent import *
 
 class NormalRent(Rent):
-    def __init__(self, rent_type, users, bike, start_time, end_time):
+    def __init__(self, rent_type, users, bike, start_time):
         self._validates_users(users)
-        super().__init__(rent_type, users, bike, start_time, end_time)
+        super().__init__(rent_type, users, bike, start_time)
 
     def _validates_users(self, users):
         if not(type(users) != list):

@@ -16,7 +16,13 @@ class RentTest(unittest.TestCase):
 
     def test_creation(self):
         rent = self._create_rent()
-        self.assertEqual(str(rent.cost()), '120.0')
+        self.assertEqual(str(rent.close()), '120.0')
+
+    def test_partial_cost(self):
+        rent = self._create_rent()
+        self.assertEqual(rent.end_time, None)
+        self.assertEqual(str(rent.partial_cost()), '120.0')
+        self.assertEqual(rent.end_time, None)
 
     def test_raise_invalid_creation_with_message(self):
         msg = 'Subclass must implement abstract method'
@@ -27,4 +33,4 @@ class RentTest(unittest.TestCase):
             self.assertEqual(str(e), msg)
 
     def _create_rent(self):
-        return Rent(self.rent_type, self.user1, self.bike, self.start, self.end)
+        return Rent(self.rent_type, self.user1, self.bike, self.start)
