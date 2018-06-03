@@ -22,8 +22,8 @@ class FamilyRentTest(unittest.TestCase):
 
     def test_creation(self):
         family_ren = FamilyRent(
-            self.rent_type, [self.user1, self.user2, self.user3], self.bike, self.start, self.end)
-        self.assertEqual(str(family_ren.cost()), '252.0')
+            self.rent_type, [self.user1, self.user2, self.user3], self.bike, self.start)
+        self.assertEqual(str(family_ren.close()), '252.0')
 
     def test_raise_invalid_creation_with_message(self):
         msg = 'Users must be between 3 and 5 members'
@@ -38,7 +38,6 @@ class FamilyRentTest(unittest.TestCase):
             [self.user1, self.user2, self.user3,
              self.user4, self.user5, self.user6],
             self.bike,
-            self.start,
-            self.end
+            self.start
         )
 

@@ -18,8 +18,8 @@ class NormalRentTest(unittest.TestCase):
 
     def test_creation(self):
         normal_rent = NormalRent(
-            self.rent_type, self.user1, self.bike, self.start, self.end)
-        self.assertEqual(str(normal_rent.cost()), '120.0')
+            self.rent_type, self.user1, self.bike, self.start)
+        self.assertEqual(str(normal_rent.close()), '120.0')
 
     def test_raise_invalid_creation_with_message(self):
         msg = 'Users must be only one'
@@ -33,6 +33,5 @@ class NormalRentTest(unittest.TestCase):
             self.rent_type,
             [self.user1, self.user2],
             self.bike,
-            self.start,
-            self.end
+            self.start
         )
