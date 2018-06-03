@@ -12,9 +12,15 @@ class RentTypeTest(unittest.TestCase):
         msg = 'Subclass must implement abstract method'
         try:
             print(str(self._create_rent_type()))
-            
+        except NotImplementedError as e:
+            self.assertEqual(str(e), msg)
+
+    def test_to_json_raise_invalid_to_string_with_message(self):
+        msg = 'Subclass must implement abstract method'
+        try:
+            self._create_rent_type().to_json()
         except NotImplementedError as e:
             self.assertEqual(str(e), msg)
 
     def _create_rent_type(self):
-        return RentType(self.price)
+        return RentType(1, self.price)

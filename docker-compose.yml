@@ -1,8 +1,14 @@
 version: '3.6'
 services:
   intive-fdv_app:
-    build: .
     container_name: intive-fdv_app
-    command: python src/main.py
+    build: .
+    stdin_open: ${DOCKERTTY}
+    tty: ${DOCKERTTY}
     volumes:
       - .:/usr/src/app
+    ports:
+      - "8080:8080"
+    command: python src/main.py
+    env_file:
+      - '.env'
