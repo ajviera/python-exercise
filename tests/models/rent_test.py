@@ -10,11 +10,15 @@ import unittest
 class RentTest(unittest.TestCase):
     end = datetime.datetime.now()
     start = end - timedelta(1)
-    user1 = User("A")
-    bike = Bike("red")
-    rent_type = RentPerDay(5.00)
+    user1 = User(1, 'A')
+    bike = Bike(1, 'red')
+    rent_type = RentPerDay(1, 5.00)
+    id = 1
 
     def test_creation(self):
+        self.assertEqual(str(self._create_rent()), str(self.id))
+
+    def test_close(self):
         rent = self._create_rent()
         self.assertEqual(str(rent.close()), '120.0')
 
@@ -33,4 +37,4 @@ class RentTest(unittest.TestCase):
             self.assertEqual(str(e), msg)
 
     def _create_rent(self):
-        return Rent(self.rent_type, self.user1, self.bike, self.start)
+        return Rent(self.id, self.rent_type, self.user1, self.bike, self.start)

@@ -19,7 +19,7 @@ The project is Docker-ready. To start developing we just need to have Docker ins
 
 ``` sh
 docker-compose build
-docker-compose up
+docker-compose up -d && docker attach intive-fdv_app
 ```
 
 And that's it :-)
@@ -91,3 +91,42 @@ To model the domain of the problem, opt for Object Oriented Programming, using s
 ## Development Practices
 
 First, I set up the [Git repository](https://github.com/ajviera/python-exercise), then I installed test and coverage tools, CI tools like [Travis](https://travis-ci.org/ajviera/python-exercise) and [Coveralls](https://coveralls.io/github/ajviera/python-exercise), and Dockerize the application. These are the things I usually do when I start developing a new project.
+
+## API DOC
+
+---
+
+### GET methods
+
+> _GET users_
+- `http://localhost:8080/api/v1/users`
+
+> _GET user_
+- `http://localhost:8080/api/v1/users/:id`
+
+> _GET user rents_
+- `http://localhost:8080/api/v1/users/:id/rents`
+
+> _GET user rent_
+- `http://localhost:8080/api/v1/users/:id/rents/:id`
+
+---
+
+### POST methods
+
+> _POST create user rent_
+- `http://localhost:8080/api/v1/users/:id/rents`
+
+Expected Params:
+
+```json
+{
+  "time": string, OPTIONS("per_hour", "per_day", "per_week")
+  "extra_users": [ { "id": integer } ],
+  "bike_id": 1,
+  "type": string OPTIONS("normal", "family")
+}
+```
+
+> _POST close user rent_
+- `http://localhost:8080/api/v1/users/:id/rents/:id`

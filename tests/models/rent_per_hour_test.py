@@ -8,6 +8,10 @@ class RentPerHourTest(unittest.TestCase):
         rent_per_hour = self._create_rent_per_hour()
         self.assertEqual(rent_per_hour.price, self.price)
 
+    def test_to_json(self):
+        rent_per_hour = self._create_rent_per_hour()
+        self.assertIsNotNone(str(rent_per_hour.to_json()))
+
     def test_to_string(self):
         msg1 = '$' + str(self.price) + ' per day'
         msg2 = '$' + str(self.price) + ' per hour'
@@ -19,4 +23,4 @@ class RentPerHourTest(unittest.TestCase):
         self.assertNotEqual(str(rent_per_hour), msg3)
 
     def _create_rent_per_hour(self):
-        return RentPerHour(self.price)
+        return RentPerHour(1, self.price)
